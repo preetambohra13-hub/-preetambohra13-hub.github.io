@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Replace the website URL after publishing on GitHub Pages -->
+    <title>Preetam Bohra | Frontend Web Developer Portfolio</title>
+    <meta name="description" content="Explore the portfolio of Preetam Bohra, a BCA student at Mind Power University, aspiring frontend web developer, AI enthusiast and technology learner.">
+    <meta name="author" content="Preetam Bohra">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b1020">
+
+    <!-- IMPORTANT: Replace this URL with your actual published website URL -->
+    <link rel="canonical" href="https://YOUR-USERNAME.github.io/">
+
+    <!-- Social sharing preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Preetam Bohra | Developer Portfolio">
+    <meta property="og:description" content="My projects, skills, experience and professional journey.">
+    <meta property="og:url" content="https://YOUR-USERNAME.github.io/">
+
+    <!-- Add your real, publicly accessible profile image URL after deployment -->
+    <!-- <meta property="og:image" content="https://YOUR-USERNAME.github.io/images/profile.jpg"> -->
+
+    <!-- Structured data helps search engines understand the website.
+         Replace the placeholder URL and image URL before publishing. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Preetam Bohra",
+      "url": "https://YOUR-USERNAME.github.io/",
+      "image": "https://YOUR-USERNAME.github.io/images/profile.jpg",
+      "jobTitle": "Aspiring Frontend Web Developer",
+      "description": "BCA student interested in frontend development, UI design and AI tools.",
+      "email": "preetambohra13@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Mind Power University"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/preetam-bohra-7a66a6383/",
+        "https://www.instagram.com/preetam_bohra.07/",
+        "https://github.com/preetambohra13-hub"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #0b1020;
+            --surface: #121a2e;
+            --surface-light: #19243b;
+            --text: #f4f7fb;
+            --muted: #aab7cb;
+            --accent: #65f0d0;
+            --accent-dark: #173d3a;
+            --border: #293650;
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 85px 0;
+            scroll-margin-top: 85px;
+        }
+
+        .section-heading {
+            margin-bottom: 32px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.25;
+            margin: 8px 0 12px;
+        }
+
+        .section-heading p,
+        .muted {
+            color: var(--muted);
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 32, .94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            color: var(--accent);
+            font-size: 25px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 21px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+            color: var(--text);
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 19px;
+            background: var(--accent);
+            color: #08151a;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+            transition: .2s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.07);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 90px 0;
+            min-height: 610px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 90% 15%, #183f42 0%, transparent 35%),
+                radial-gradient(ellipse at 5% 85%, #1a2342 0%, transparent 35%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.35fr .8fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.1;
+            margin: 16px 0;
+            letter-spacing: -1.8px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero h3 {
+            color: #d7e2f0;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 20px 0 25px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-tags {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: var(--accent);
+            background: var(--accent-dark);
+            border: 1px solid #24514b;
+            padding: 5px 11px;
+            border-radius: 30px;
+            font-size: 12px;
+        }
+
+        .profile-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-frame {
+            width: min(310px, 75vw);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            padding: 8px;
+            border: 2px solid var(--accent);
+            background: #14273a;
+            box-shadow: 0 0 70px #65f0d01c;
+            overflow: hidden;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #203c50, #101729);
+            color: var(--accent);
+            font-size: 72px;
+            font-weight: bold;
+        }
+
+        .profile-placeholder small {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--muted);
+            font-weight: normal;
+        }
+
+        .profile-caption {
+            margin-top: 17px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* GENERAL CARDS */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: transform .25s, border-color .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #477e78;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .card .tag {
+            margin: 5px 4px 0 0;
+        }
+
+        .card-icon {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            background: var(--accent-dark);
+            color: var(--accent);
+            border-radius: 12px;
+            margin-bottom: 18px;
+            font-size: 21px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .about-panel {
+            padding: 30px;
+            background: linear-gradient(145deg, #15273a, #11182a);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .about-panel .big-number {
+            font-size: 38px;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .detail-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .detail {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .detail small {
+            display: block;
+            color: var(--muted);
+        }
+
+        .detail strong {
+            font-size: 13px;
+        }
+
+        /* SKILLS */
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-list .tag {
+            padding: 9px 14px;
+            font-size: 14px;
+        }
+
+        /* TIMELINE / EXPERIENCE */
+
+        .timeline {
+            display: grid;
+            gap: 18px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 55px 1fr;
+            gap: 18px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            border-radius: var(--radius);
+        }
+
+        .timeline-dot {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: var(--accent);
+            background: var(--accent-dark);
+            font-size: 20px;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .timeline-item ul {
+            color: var(--muted);
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 255px;
+        }
+
+        .project-card .project-bottom {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        /* PHOTO GALLERY */
+
+        .gallery-note {
+            margin-bottom: 22px;
+            padding: 14px 17px;
+            border: 1px dashed #456b70;
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .gallery-item {
+            position: relative;
+            min-height: 240px;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #16243a;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+            cursor: zoom-in;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            color: var(--muted);
+            background: linear-gradient(145deg, #1a2d43, #101729);
+        }
+
+        .gallery-placeholder span {
+            font-size: 36px;
+            margin-bottom: 9px;
+        }
+
+        .gallery-placeholder strong {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .gallery-placeholder small {
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 15px 13px;
+            background: linear-gradient(transparent, #050a15ed);
+            color: white;
+            pointer-events: none;
+        }
+
+        .gallery-caption strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .gallery-caption span {
+            font-size: 12px;
+            color: #c5d2e4;
+        }
+
+        /* IMAGE LIGHTBOX */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            background: #03060deF;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: min(100%, 1000px);
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            color: white;
+            background: #26354c;
+            border: none;
+            border-radius: 50%;
+            width: 43px;
+            height: 43px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* EDUCATION */
+
+        .education-year {
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            padding: 50px 25px;
+            border-radius: 24px;
+            background:
+                radial-gradient(ellipse at top, #19403d, transparent 65%),
+                var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .contact-box p {
+            max-width: 600px;
+            color: var(--muted);
+            margin: 12px auto 22px;
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .socials a {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 9px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .socials a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 27px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--accent);
+            color: #08151a;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px #0004;
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero-grid {
+                gap: 30px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .nav-inner {
+                min-height: 68px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                padding: 18px 5%;
+                background: #0b1020;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-wrap {
+                grid-row: 1;
+            }
+
+            .profile-frame {
+                width: 220px;
+            }
+
+            .hero-actions,
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                min-height: 250px;
+            }
+
+            .detail-list {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 42px 1fr;
+                padding: 18px;
+                gap: 12px;
+            }
+
+            .timeline-dot {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar" id="top">
+        <div class="container nav-inner">
+            <a class="brand" href="#home">Preetam<span>.</span></a>
+
+            <button class="menu-btn" id="menuBtn"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                ☰ Menu
+            </button>
+
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME / PROFILE -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div>
+                    <div class="eyebrow">Welcome to my personal website</div>
+
+                    <h1>Hi, I'm <span>Preetam Bohra</span></h1>
+
+                    <h3>Frontend Web Developer & BCA Student</h3>
+
+                    <p class="hero-description">
+                        I enjoy building clean, responsive websites and
+                        learning new technologies. I'm exploring web
+                        development, programming, UI design and AI tools
+                        to create useful digital experiences.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn" href="#projects">Explore My Work ↗</a>
+                        <a class="btn btn-outline" href="#contact">Connect With Me</a>
+
+                        <!-- CV OPTION:
+                             Put your PDF in the same folder as index.html.
+                             Rename it to Preetam_Bohra_Updated_CV.pdf.
+                             Then uncomment the line below. -->
+                        <!-- <a class="btn btn-outline" href="Preetam_Bohra_Updated_CV.pdf" target="_blank" rel="noopener">View Resume</a> -->
+                    </div>
+
+                    <div class="hero-tags">
+                        <span class="tag">HTML & CSS</span>
+                        <span class="tag">JavaScript - Learning</span>
+                        <span class="tag">AI Tools</span>
+                        <span class="tag">BCA 3rd Semester</span>
+                    </div>
+                </div>
+
+                <div class="profile-wrap">
+                    <div class="profile-frame">
+
+                        <!-- PROFILE PHOTO:
+                             Create a folder named "images" beside index.html.
+                             Put your own photo inside it as profile.jpg.
+                             Supported formats include JPG, PNG and WebP.
+                             If you use another filename, change the src below. -->
+
+                        <img
+                            src="dp/dp.jpeg"
+                            alt="Preetam Bohra, frontend web developer"
+                            width="600"
+                            height="600"
+                            fetchpriority="high"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                        <!-- This placeholder appears automatically if photo is missing. -->
+                        <div class="profile-placeholder" style="display:none;">
+                            PB
+                            <small>ADD YOUR PHOTO</small>
+                        </div>
+                    </div>
+
+                    <p class="profile-caption">
+                        Preetam Bohra · Personal Portfolio
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">A little about me</div>
+                    <h2>About Me</h2>
+                    <p>My background, interests and professional goals.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-panel">
+                        <div class="big-number">BCA</div>
+                        <h3>Mind Power University</h3>
+                        <p class="muted">Bhimtal, Uttarakhand · 2024–2028</p>
+                        <br>
+                        <p class="muted">
+                            Building practical skills through learning,
+                            projects, internships and collaboration.
+                        </p>
+                    </div>
+
+                    <div class="about-text">
+                        <p>
+                            I am a Bachelor of Computer Applications student
+                            at Mind Power University, Bhimtal. I am developing
+                            my skills in frontend web development, user
+                            interface design, programming and AI-assisted
+                            workflows.
+                        </p>
+
+                        <p>
+                            I completed a one-month website redesign
+                            internship at Innovate Services and have also
+                            participated in student networking and social
+                            media activities at Airkrit India.
+                        </p>
+
+                        <p>
+                            At the Mindverse college hackathon, my team
+                            secured second position for an AI-assisted
+                            Smart Waste Management website concept.
+                        </p>
+
+                        <div class="detail-list">
+                            <div class="detail">
+                                <small>Education</small>
+                                <strong>BCA Undergraduate</strong>
+                            </div>
+
+                            <div class="detail">
+                                <small>Location</small>
+                                <strong>Bhimtal, Uttarakhand</strong>
+                            </div>
+
+                            <div class="detail">
+                                <small>Career Interest</small>
+                                <strong>Web Development</strong>
+                            </div>
+
+                            <div class="detail">
+                                <small>Current Focus</small>
+                                <strong>JavaScript & Projects</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">What I work with</div>
+                    <h2>Skills & Technologies</h2>
+                    <p>Technologies and tools I use or am currently learning.</p>
+                </div>
+
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-icon">⌘</div>
+                        <h3>Web Development</h3>
+                        <p>Building website structure and responsive layouts.</p>
+                        <div>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">{ }</div>
+                        <h3>Programming</h3>
+                        <p>Learning programming concepts and logical problem-solving.</p>
+                        <div>
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">OOP Basics</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">✦</div>
+                        <h3>AI & Productivity</h3>
+                        <p>Using AI tools to assist learning, research and debugging.</p>
+                        <div>
+                            <span class="tag">Prompt Engineering</span>
+                            <span class="tag">AI Tools</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">↗</div>
+                        <h3>Tools & Collaboration</h3>
+                        <p>Working with code, documentation and digital communication.</p>
+                        <div>
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">MS Excel</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">My journey so far</div>
+                    <h2>Experience</h2>
+                    <p>Practical work and professional learning.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-dot">⌘</div>
+                        <div>
+                            <h3>Website Redesign Intern</h3>
+                            <p><strong>Innovate Services</strong> · 1 month</p>
+                            <ul>
+                                <li>Redesigned website pages using supplied content and requirements.</li>
+                                <li>Created frontend layouts with attention to visual presentation and user experience.</li>
+                                <li>Practised organising website information into structured page designs.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot">↗</div>
+                        <div>
+                            <h3>Social Media Intern</h3>
+                            <p><strong>Airkrit India</strong> · Current role as listed in my CV</p>
+                            <ul>
+                                <li>Participating in student outreach and networking activities.</li>
+                                <li>Supporting professional communication and sharing relevant opportunities and updates.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">Selected work</div>
+                    <h2>Projects & Achievements</h2>
+                    <p>Some of my learning and collaborative project work.</p>
+                </div>
+
+                <div class="grid">
+                    <article class="card project-card">
+                        <div class="card-icon">♻</div>
+                        <h3>Smart Waste Management</h3>
+                        <p>
+                            An AI-assisted website concept focused on
+                            smarter waste management, created as a
+                            college hackathon project.
+                        </p>
+                        <div class="project-bottom">
+                            <span class="tag">AI Concept</span>
+                            <span class="tag">Web Design</span>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="card-icon">✧</div>
+                        <h3>Mind Hackathon</h3>
+                        <p>
+                            Participated with a team and secured
+                            second position for the Smart Waste
+                            Management project.
+                        </p>
+                        <div class="project-bottom">
+                            <span class="tag">2nd Position</span>
+                            <span class="tag">Teamwork</span>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="card-icon">▤</div>
+                        <h3>Website Redesign</h3>
+                        <p>
+                            Practised transforming supplied website
+                            content into organised frontend layouts
+                            with a focus on user experience.
+                        </p>
+                        <div class="project-bottom">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">UI Design</span>
+                        </div>
+                    </article>
+
+                    <!-- Add more projects by copying one article.card.project-card
+                         and updating its title, description and tags. -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">My photos & moments</div>
+                    <h2>Photo Gallery</h2>
+                    <p>A collection of my professional and learning journey.</p>
+                </div>
+
+                <div class="gallery-note">
+                    <strong>How to add your photos:</strong>
+                    Create an <code>images</code> folder beside this HTML file.
+                    Add your images using the filenames shown below.
+                    Missing photos will show placeholders automatically.
+                </div>
+
+                <div class="gallery-grid">
+
+                    <!-- PHOTO 1:
+                         Save your professional photo as images/gallery-1.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>Professional Photo</strong>
+                            <small>images/gallery-1.jpg</small>
+                        </div>
+                        <img src="profetional/profetional .jpeg"
+                             alt="Preetam Bohra professional portrait"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>Professional Profile</strong>
+                            <span>My professional journey</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- PHOTO 2:
+                         Save your college photo as images/gallery-2.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>College Memories</strong>
+                            <small>images/gallery-2.jpg</small>
+                        </div>
+                        <img src="gate/collage memory.jpeg"
+                             alt="Preetam Bohra college memories"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>College Memories</strong>
+                            <span>Learning and growing</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- PHOTO 3:
+                         Save your event photo as images/gallery-3.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>Events & Activities</strong>
+                            <small>images/gallery-3.jpg</small>
+                        </div>
+                        <img src="event/event acty.jpeg"
+                             alt="Preetam Bohra at an event"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>Events & Activities</strong>
+                            <span>Experiences and new opportunities</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- PHOTO 4:
+                         Save your project photo as images/gallery-4.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>Project Work</strong>
+                            <small>images/gallery-4.jpg</small>
+                        </div>
+                        <img src="Project Work/Project Work.jpeg"
+                             alt="Preetam Bohra working on a project"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>Project Work</strong>
+                            <span>Building and experimenting</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- PHOTO 5:
+                         Save your achievement photo as images/gallery-5.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>Achievements</strong>
+                            <small>images/gallery-5.jpg</small>
+                        </div>
+                        <img src="clg mory/achivenent.jpegnew.jpeg"
+                             alt="Preetam Bohra achievement or certificate"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>Achievements</strong>
+                            <span>Milestones along the way</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- PHOTO 6:
+                         Save another personal photo as images/gallery-6.jpg -->
+                    <figure class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <span>▧</span>
+                            <strong>Personal Moments</strong>
+                            <small>images/gallery-6.jpg</small>
+                        </div>
+                        <img src="presonal/personal moment.jpeg"
+                             alt="Preetam Bohra personal photo"
+                             loading="lazy" width="800" height="600"
+                             onerror="this.style.display='none';"
+                             onclick="openLightbox(this)">
+                        <figcaption class="gallery-caption">
+                            <strong>Personal Moments</strong>
+                            <span>Life beyond the screen</span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">Academic background</div>
+                    <h2>Education & Certifications</h2>
+                    <p>My education and completed training, as listed in my CV.</p>
+                </div>
+
+                <div class="grid">
+                    <article class="card">
+                        <div class="education-year">2024–2028</div>
+                        <h3>Bachelor of Computer Applications</h3>
+                        <p>Mind Power University, Bhimtal</p>
+                        <p>Currently pursuing the 3rd semester.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="education-year">2024</div>
+                        <h3>Class XII · CBSE</h3>
+                        <p>Percentage: 66.8%</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="education-year">2022</div>
+                        <h3>Class X · Uttarakhand Board</h3>
+                        <p>Percentage: 73.8%</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">✓</div>
+                        <h3>IBM Python Programming</h3>
+                        <p>Python programming and core logic concepts.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">✓</div>
+                        <h3>NASSCOM FutureSkills Prime</h3>
+                        <p>AI Fundamentals.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">✓</div>
+                        <h3>Additional Training</h3>
+                        <p>Six-month Basic Computer Applications course and AI / Prompt Engineering certificate as listed in my CV.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="eyebrow">Let's connect</div>
+                    <h2>Contact Me</h2>
+                    <p>
+                        I am interested in web development, learning
+                        opportunities, internships and collaborative
+                        projects. Feel free to connect through my
+                        professional profiles.
+                    </p>
+
+                    <div class="socials">
+                        <a href="mailto:preetambohra13@gmail.com">✉ Email</a>
+
+                        <a href="https://www.linkedin.com/in/preetam-bohra-7a66a6383/"
+                           target="_blank" rel="noopener noreferrer">
+                           LinkedIn ↗
+                        </a>
+
+                        <a href="https://www.instagram.com/preetam_bohra.07/"
+                           target="_blank" rel="noopener noreferrer">
+                           Instagram ↗
+                        </a>
+
+                        <a href="https://github.com/preetambohra13-hub"
+                           target="_blank" rel="noopener noreferrer">
+                           GitHub ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> Preetam Bohra. All rights reserved.</p>
+            <p>Designed with HTML, CSS and JavaScript.</p>
+        </div>
+    </footer>
+
+    <a href="#top" class="back-top" aria-label="Back to top">↑</a>
+
+    <!-- Image viewer for gallery photos -->
+    <div class="lightbox" id="lightbox"
+         role="dialog" aria-modal="true" aria-label="Photo viewer"
+         onclick="closeLightbox()">
+        <button class="lightbox-close" aria-label="Close photo"
+                onclick="closeLightbox()">×</button>
+        <img id="lightboxImage" src="" alt="Expanded gallery photo">
+    </div>
+
+    <script>
+        // Current year in footer
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Mobile navigation menu
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
+            menuBtn.textContent = isOpen ? "✕ Close" : "☰ Menu";
+        });
+
+        // Close mobile menu after choosing a section
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuBtn.setAttribute("aria-expanded", "false");
+                menuBtn.textContent = "☰ Menu";
+            });
+        });
+
+        // Open gallery photo in a larger viewer
+        function openLightbox(image) {
+            if (!image || !image.src || image.style.display === "none") {
+                return;
+            }
+
+            const viewer = document.getElementById("lightbox");
+            const viewerImage = document.getElementById("lightboxImage");
+
+            viewerImage.src = image.src;
+            viewerImage.alt = image.alt;
+            viewer.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        // Close photo viewer
+        function closeLightbox() {
+            const viewer = document.getElementById("lightbox");
+            viewer.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        // Close viewer using Escape key
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
